@@ -18,12 +18,12 @@ Route::get('/', function () {
 });
 
 
-    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-    $this->post('login', 'Auth\LoginController@login');
+    Route::get('login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+    Route::post('login', 'App\Http\Controllers\Auth\LoginController@login');
 
-    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+    Route::post('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
-    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    $this->post('register', 'Auth\RegisterController@register');
+    Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'App\Http\Controllers\Auth\RegisterController@register');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
