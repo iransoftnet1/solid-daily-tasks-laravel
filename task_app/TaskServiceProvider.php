@@ -29,6 +29,6 @@ class TaskServiceProvider extends ServiceProvider
         ]);
         $this->loadViewsFrom(base_path('task_app/views'),'Task');
         Route::middleware('web')
-            ->group(base_path('task_app/route_auth.php'));
+            ->group(base_path('task_app/task_routes.php'));
     }
 }
